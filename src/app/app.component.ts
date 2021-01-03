@@ -21,6 +21,15 @@ const COMMENTS: Comment[] = [
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   comments = COMMENTS;
   currentUser = CURRENT_USER;
+  comment = '';
+
+  addComment(comment: string): void {
+    if(comment) {
+      const newComment = new Comment(this.currentUser, comment);
+      this.comments.push(newComment);
+    }
+  }
 }
