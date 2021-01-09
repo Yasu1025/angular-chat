@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-chat-c0205": {
+      "hosting": {
+        "angular-chat": [
+          "angular-chat-c0205"
+        ]
+      }
+    }
+  }
+}
