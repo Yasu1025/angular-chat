@@ -15,6 +15,5 @@ export class Comment {
     if(value.key) {
       this.key = value.key;
     }
-    console.log(this)
   }
 }
