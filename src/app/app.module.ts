@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { CoreModule } from './modules/core/core.module';
+import { AppRoutingModule } from './modules/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CoreModule } from './modules/core/core.module';
   imports: [
     BrowserModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
