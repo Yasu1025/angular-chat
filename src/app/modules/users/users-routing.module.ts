@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewUserComponent } from './components/new-user/new-user.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 const routes: Routes = [
-  {path: 'new', component: NewUserComponent}
+  { path: 'new', component: NewUserComponent },
+  { path: ':id', component: UserDetailComponent }
 ];
 
 @NgModule({
