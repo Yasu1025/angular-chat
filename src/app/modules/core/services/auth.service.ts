@@ -23,4 +23,13 @@ export class AuthService {
         user.sendEmailVerification(actionCodeSettings);
       });
   }
+
+  login(email: string, password: string): Promise<firebase.auth.UserCredential | void> {
+    return this.afAuth.signInWithEmailAndPassword(email, password)
+      .catch(error => console.log('LOGIN FAILED: ', error))
+  }
+
+  logout(): Promise<void> {
+    return this.afAuth.signOut();
+  }
 }
