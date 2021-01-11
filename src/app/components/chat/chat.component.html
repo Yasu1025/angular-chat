@@ -11,8 +11,10 @@
   </div>
 </ng-template>
 
-<ng-container *ngIf="currentUser$ | async; else welcome">
-  <section class="chat">
+<div *ngIf="currentUser$ | async; else welcome" class="chat-container">
+  <ac-user-list></ac-user-list>
+  <div class="content">
+    <section class="chat">
       <div
         class="list-group-item list-group-item-action flex-column align-items-start border-0"
         *ngFor="let comment of comments$ | async"
@@ -61,29 +63,31 @@
           </div>
         </div>
       </div>
-  </section>
+    </section>
 
-  <section class="chat-editor">
-    <form class="chat-form">
-      <div class="form-header d-flex flex-row-reverse mb-2">
-        <span class="input-group-btn">
-          <button
-            (click)="addComment(comment);"
-            class="btn btn-info btn-sm"
-            type="submit"
-            tabindex="2"
-          >送信</button>
-        </span>
-      </div>
-      <div class="input-group">
-        <textarea
-          [(ngModel)]="comment"
-          name="comment"
-          class="form-control"
-          placeholder="メッセージを入力"
-          tabindex="1"
-        ></textarea>
-      </div>
-    </form>
-  </section>
-</ng-container>
+    <section class="chat-editor">
+      <form class="chat-form">
+        <div class="form-header d-flex flex-row-reverse mb-2">
+          <span class="input-group-btn">
+            <button
+              (click)="addComment(comment);"
+              class="btn btn-info btn-sm"
+              type="submit"
+              tabindex="2"
+            >送信</button>
+          </span>
+        </div>
+        <div class="input-group">
+          <textarea
+            [(ngModel)]="comment"
+            name="comment"
+            class="form-control"
+            placeholder="メッセージを入力"
+            tabindex="1"
+          ></textarea>
+        </div>
+      </form>
+    </section>
+  </div>
+
+</div>
