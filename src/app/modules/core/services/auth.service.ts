@@ -11,19 +11,6 @@ export class AuthService {
     // this.afAuth.onAuthStateChanged(user => console.log(user))
   }
 
-  create(email: string, password: string): Promise<void> {
-    return this.afAuth.createUserWithEmailAndPassword(email, password)
-      .then((credential) => {
-        const { user } = credential;
-        // setting redirect
-        const actionCodeSettings = {
-          url: `http://localhost:4200/?newAccount=true&email=${user.email}`
-        }
-        // confirm mail send
-        user.sendEmailVerification(actionCodeSettings);
-      });
-  }
-
   login(email: string, password: string): Promise<firebase.auth.UserCredential | void> {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .catch(error => console.log('LOGIN FAILED: ', error))
