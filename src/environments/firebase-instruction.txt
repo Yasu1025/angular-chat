@@ -1,0 +1,12 @@
+make firebase setting file in this dir.
+like below
+
+file name: firebase.env.ts
+export const firebaseConfig = {
+  apiKey: "your key",
+  authDomain: "your domain",
+  projectId: "your projectId",
+  storageBucket: "your strage bucket",
+  messagingSenderId: "your message id",
+  appId: "your app id"
+};
